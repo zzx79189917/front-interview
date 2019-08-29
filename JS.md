@@ -54,6 +54,7 @@ string array number null undefined boolean object
 4. 函数的扩展,可以给函数添加默认值
 5. 数组的扩展indexOf forEach map 
 6. class
+7. promise（具体）
 
 #####cookie的限制条件
 cookie 限制条件：cookie 的属性和 cookie 的总大小。

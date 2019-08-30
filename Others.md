@@ -44,7 +44,6 @@ mvvm它实现了View和Model的自动同步，也就是当Model的属性改变�
 - 单例模式
 
 ####单例模式
-
 ```
 class Singleton {
     constructor(name) {

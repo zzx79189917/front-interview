@@ -193,3 +193,56 @@ var obj = {
 obj.b(); 
 obj.c();
 ```
+
+##### CommonJS模块的特点
+- 所有代码都运行在模块作用域，不会污染全局作用域。
+- 模块可以多次加载，但是只会在第一次加载时运行一次，然后运行结果就被缓存了，以后再加载，就直接读取缓存结果。要想让模块再次运行，必须清除缓存。
+- 模块加载的顺序，按照其在代码中出现的顺序。
+
+##### AMD规范与CommonJS规范的兼容性
+CommonJS规范加载模块是同步的，也就是说，只有加载完成，才能执行后面的操作。AMD规范则是非同步加载模块，允许指定回调函数。由于Node.js主要用于服务器编程，模块文件一般都已经存在于本地硬盘，所以加载起来比较快，不用考虑非同步加载的方式，所以CommonJS规范比较适用。但是，如果是浏览器环境，要从服务器端加载模块，这时就必须采用非同步模式，因此浏览器端一般采用AMD规范。
+
+##### 函数防抖
+```
+function debounce(func, wait) {
+    let timeout;  // 定时器变量
+    return function() {
+        clearTimeout(timeout);  // 每次触发时先清除上一次的定时器,然后重新计时
+        timeout = setTimeout(func, wait);  // 指定 xx ms 后触发真正想进行的操作 handler
+    };
+}
+//事件处理程序
+function realFunc(){
+    console.log("Success");
+}
+
+const input = document.getElementById('input');
+input.addEventListener('keydown',debounce(realFunc,500));
+```
+
+##### 函数节流
+```
+function throttle(func,interval){
+    let timeout;
+    let startTime = new Date();
+    return function (){
+        clearTimeout(timeout);
+        let curTime = new Date();
+        if(curTime - startTime <= interval){
+            //小于规定时间间隔时，用setTimeout在指定时间后再执行
+            timeout = setTimeout(()=>{
+                func();
+            },interval)
+        } else {
+            //重新计时并执行函数
+            startTime = curTime;
+            func()
+        }
+    }
+}
+//事件处理程序
+function realFunc(){
+    console.log('success')
+}
+window.addEventListener('scroll',throttle(realFunc,100));
+```

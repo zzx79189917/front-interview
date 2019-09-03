@@ -1,8 +1,8 @@
-#####Flex布局
+##### Flex布局
 [链接](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html?utm_source=tuicool)
 
 
-#####position 属性有哪些值，分别什么含义
+##### position 属性有哪些值，分别什么含义
 [链接]（https://www.runoob.com/w3cnote/css-position-static-relative-absolute-fixed.html）
 1. static：静态定位，默认，相当于没设置，top、right、bottom、left属性（以下简称TRBL）和z-index属性不生效。
 2. fixed：固定定位，相对于浏览器窗口来定位，TRBL属性和z-index属性有效。

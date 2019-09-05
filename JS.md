@@ -272,3 +272,8 @@ meta是用来在HTML文档中模拟HTTP协议的响应头报文。meta 标签用
 
 ##### 函数柯里化
 [链接](https://www.jianshu.com/p/2975c25e4d71)
+
+##### 存储方式
+- sessionStroage 用于临时保持同一窗口的数据，窗口关闭数据也将删除
+- cookie 用于存储web页面的用户信息，当用户访问web页面时，他的名字可以记录在cookie中，在用户下一次访问该页面时，可以在cookier中读取用户访问记录,cookie中每条cookie的存储空间为4k。
+- localStorage 本地存储，同时不受时间限制的数据存储，localStorage中一般浏览器支持的是5M大小

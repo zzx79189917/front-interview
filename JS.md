@@ -246,3 +246,29 @@ function realFunc(){
 }
 window.addEventListener('scroll',throttle(realFunc,100));
 ```
+
+##### 路由的实现方式
+hash 是 URL 中 hash (#) 及后面的那部分，常用作锚点在页面内进行导航，改变 URL 中的 hash 部分不会引起页面刷新，通过 hashchange 事件监听 URL 的变化。
+改变 URL 的方式只有这几种：
+- 通过浏览器前进后退改变URL
+- 通过a标签改变URL
+- 通过window.location改变URL
+
+history 提供了 pushState 和 replaceState 两个方法，这两个方法改变 URL 的 path 部分不会引起页面刷新。
+history 提供类似 hashchange 事件的 popstate 事件，但 popstate 事件有些不同：
+- 通过浏览器前进后退改变URL时会触发popstate事件
+- 通过pushState/replaceState或a标签改变URL不会触发 popstate 事件
+
+##### 用meta实现不从缓存中获取资源
+meta是用来在HTML文档中模拟HTTP协议的响应头报文。meta 标签用于网页的\<head>与\</head>中，meta 标签的用处很多。meta 的属性有两种：name和http-equiv。name属性主要用于描述网页.
+```
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content=""> 
+```
+
+##### 前端事件模型和事件委托
+[链接](https://www.cnblogs.com/leftJS/p/10948138.html)
+
+##### 函数柯里化
+[链接](https://www.jianshu.com/p/2975c25e4d71)

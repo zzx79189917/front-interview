@@ -148,6 +148,9 @@ cookie 限制条件：cookie 的属性和 cookie 的总大小。
 ##### 原型链的继承
 [链接](https://www.jb51.net/article/146219.htm)
 
+##### 原型链 __proto__ prototype区别
+![avatar](https://img-blog.csdn.net/20180823183227903?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpdXhpYW83MjM4NDY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
 ##### 箭头函数和普通函数的区别
 1. 箭头函数是匿名函数，不能作为构造函数，不能使用new
 2. 箭头函数不能绑定arguments，取而代之用rest参数...解决
@@ -277,3 +280,41 @@ meta是用来在HTML文档中模拟HTTP协议的响应头报文。meta 标签用
 - sessionStroage 用于临时保持同一窗口的数据，窗口关闭数据也将删除
 - cookie 用于存储web页面的用户信息，当用户访问web页面时，他的名字可以记录在cookie中，在用户下一次访问该页面时，可以在cookier中读取用户访问记录,cookie中每条cookie的存储空间为4k。
 - localStorage 本地存储，同时不受时间限制的数据存储，localStorage中一般浏览器支持的是5M大小
+
+##### 判断数组的方法
+[链接](https://segmentfault.com/a/1190000017790888)
+- instanceof 操作符判断 
+```
+arr instanceof Array
+```
+- 对象构造函数的 constructor判断 
+```
+arr.constructor === Array
+```
+- Array 原型链上的 isPrototypeOf
+```
+Array.prototype.isPrototypeOf(arr)
+```
+- Object.getPrototypeOf 
+```
+Object.getPrototypeOf(arr) === Array.prototype 
+```
+- Object.prototype.toString
+```
+Object.prototype.toString.call(arr) === '[object Array]'
+```
+- Array.isArray
+
+##### instance实现原理
+[链接](https://blog.csdn.net/qq_38722097/article/details/80717240)
+
+##### attribute 和 property 的区别
+[链接](https://blog.csdn.net/zhy13087344578/article/details/79036967)
+- property和attributies都是properties的子集，而每个attribute是attributies的子集；
+- attribute可以理解为特性，可以自定义，直接在html标签上添加的和使用setAttribute添加的情况一致，即html标签添加的都是attribute属性， property则是使用xx.属性进行更改，通常来讲，更改互相影响（value除外） 
+- 当添加新的非默认属性时，是不互通的 
+- 一些特殊属性，则需要特殊对待
+
+##### apply，call，bind 的区别
+
+##### 手写bind

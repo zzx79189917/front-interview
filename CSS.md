@@ -38,3 +38,6 @@
 }
 ```
 
+##### this指向
+[链接](http://caibaojian.com/deep-in-javascript-this.html)
+

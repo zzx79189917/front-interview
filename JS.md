@@ -17,6 +17,8 @@
 3. AJAX 请求不能发送
 
 ##### 跨域解决方案
+[链接1](https://juejin.im/post/5c23993de51d457b8c1f4ee1#heading-1)
+[链接2](https://segmentfault.com/a/1190000011145364?utm_source=tag-newest)
 1. 通过jsonp跨域
 2. document.domain + iframe跨域
 3. location.hash + iframe
@@ -40,8 +42,7 @@
 4. 缺点是安全性。万一假如提供jsonp的服务存在页面注入漏洞，即它返回的javascript的内容被人控制的。那么结果是什么？所有调用这个 jsonp的网站都会存在漏洞。于是无法把危险控制在一个域名下.所以在使用jsonp的时候必须要保证使用的jsonp服务必须是安全可信的。
 
 #### js的数据类型：
-string array number null undefined boolean object
-基本数据类型：string number null undefined boolean
+基本数据类型：string number null undefined boolean Symbol
 引用类型：array object
 
 ##### ES6新增了什么？
@@ -307,6 +308,7 @@ Object.prototype.toString.call(arr) === '[object Array]'
 
 ##### instance实现原理
 [链接](https://blog.csdn.net/qq_38722097/article/details/80717240)
+instanceof 主要的实现原理就是只要右边变量的 prototype 在左边变量的原型链上即可
 
 ##### attribute 和 property 的区别
 [链接](https://blog.csdn.net/zhy13087344578/article/details/79036967)

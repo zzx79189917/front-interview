@@ -9,3 +9,5 @@ Vue最大特点我感觉就是“组件化‘和”数据驱动“？
 #####生命周期
 ![avatar](https://cn.vuejs.org/images/lifecycle.png)
 
+##### vue搭建
+[链接](https://zhuanlan.zhihu.com/p/70752505)
